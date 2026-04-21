@@ -13,8 +13,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Label 2350 3600 0    50   ~ 0
-5V
 Text Label 3900 4300 0    50   ~ 0
 5V
 Text Label 3900 5250 2    50   ~ 0
@@ -25,7 +23,7 @@ U 1 1 5E38FEB4
 P 3900 4750
 F 0 "Z1" V 3900 4829 50  0000 L CNN
 F 1 "GG040205100N2P" V 3945 4828 50  0001 L CNN
-F 2 "Diode_SMD:D_0402_1005Metric" H 3900 4750 50  0001 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 3900 4750 50  0001 C CNN
 F 3 "~" H 3900 4750 50  0001 C CNN
 F 4 "AVX Corporation" V 3900 4750 50  0001 C CNN "Manufacturer"
 F 5 "" V 3900 4750 50  0001 C CNN "Description"
@@ -86,93 +84,30 @@ Wire Wire Line
 	4350 3250 5600 3250
 Wire Wire Line
 	4350 3550 5350 3550
-Text Label 2150 3700 3    50   ~ 0
-CAP3
-Text Label 2050 3700 3    50   ~ 0
-CAP2
-Text Label 1950 3700 3    50   ~ 0
-CAP1
-Wire Wire Line
-	1950 3100 1650 3100
-Wire Wire Line
-	1950 3100 1950 3700
-Wire Wire Line
-	1650 3200 2050 3200
-Wire Wire Line
-	2050 3200 2050 3700
-Wire Wire Line
-	2150 3300 1650 3300
-Wire Wire Line
-	2150 3300 2150 3700
-$Comp
-L solo-A-rescue:USB_C_Plug-solo-solo-A-rescue P1
-U 1 1 5E656DF2
-P 1600 5750
-F 0 "P1" H 1707 7017 50  0000 C CNN
-F 1 "USB_C_Plug" H 1707 6926 50  0000 C CNN
-F 2 "solo:UTC009-C" H 1750 5750 50  0001 C CNN
-F 3 "" H 1750 5750 50  0001 C CNN
-	1    1600 5750
-	1    0    0    -1  
-$EndComp
-Text Label 2450 4550 0    50   ~ 0
+Text Label 1850 4550 0    50   ~ 0
 5V
 Wire Wire Line
-	2200 4750 2450 4750
+	1600 4750 1850 4750
 Wire Wire Line
-	2450 4750 2450 4550
-$Comp
-L Device:R R?
-U 1 1 5E65EF73
-P 2850 4700
-AR Path="/5DDFB633/5E65EF73" Ref="R?"  Part="1" 
-AR Path="/5E65EF73" Ref="R10"  Part="1" 
-F 0 "R10" H 2920 4746 50  0000 L CNN
-F 1 "5.1k" H 2920 4655 50  0000 L CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 2780 4700 50  0001 C CNN
-F 3 "~" H 2850 4700 50  0001 C CNN
-F 4 "" H 2850 4700 50  0001 C CNN "Manufacturer"
-F 5 "+/-5%" H 2850 4700 50  0001 C CNN "Description"
-F 6 "" H 2850 4700 50  0001 C CNN "MPN"
-F 7 "2" H 2850 4700 50  0001 C CNN "Pins"
-F 8 "0402" H 2850 4700 50  0001 C CNN "Package"
-	1    2850 4700
-	-1   0    0    1   
-$EndComp
-Text Label 2850 4350 0    50   ~ 0
-GND
-Wire Wire Line
-	2850 4550 2850 4350
-Wire Wire Line
-	2200 4950 2850 4950
-Wire Wire Line
-	2850 4950 2850 4850
+	1850 4750 1850 4550
 Text Label 4650 3250 0    50   ~ 0
 D+
 Text Label 4650 3550 0    50   ~ 0
 D-
-Text Label 2600 5450 0    50   ~ 0
+Text Label 2000 5450 0    50   ~ 0
 D+
-Text Label 2600 5250 0    50   ~ 0
+Text Label 2000 5250 0    50   ~ 0
 D-
 Wire Wire Line
-	2600 5250 2200 5250
+	2000 5250 1600 5250
 Wire Wire Line
-	2600 5450 2200 5450
-Text Label 1600 7550 2    50   ~ 0
+	2000 5450 1600 5450
+Text Label 1000 6450 2    50   ~ 0
 GND
 Wire Wire Line
-	1600 7550 1600 7350
-Text Label 1750 3650 0    50   ~ 0
-NFC-
-Text Label 1750 3550 0    50   ~ 0
-NFC+
-Wire Wire Line
-	1750 3550 1700 3550
-Wire Wire Line
-	1750 3650 1700 3650
+	1000 6450 1000 6250
 $Comp
-L solo-A-rescue:TPD4S012DRYR-dk_TVS-Diodes D2
+L nk3cn-zeus-rescue:TPD4S012DRYR-dk_TVS-Diodes-fido2-lpc55-rescue D2
 U 1 1 5F2C15B3
 P 3300 5150
 F 0 "D2" H 3644 4953 60  0000 L CNN
@@ -191,41 +126,83 @@ F 12 "Active" H 3500 6350 60  0001 L CNN "Status"
 	1    3300 5150
 	1    0    0    -1  
 $EndComp
-Text Label 3600 5350 0    50   ~ 0
-D-
 Text Label 3000 5350 2    50   ~ 0
+D-
+Text Label 3600 5350 0    50   ~ 0
 D+
 NoConn ~ 3300 5050
 Text Label 3300 5750 3    50   ~ 0
 GND
-NoConn ~ 3000 5450
 Wire Wire Line
 	3900 4300 3900 4600
 Wire Wire Line
 	3900 4900 3900 5250
+$Comp
+L Mechanical:Fiducial FID1
+U 1 1 5FB460BE
+P 1450 1600
+F 0 "FID1" H 1535 1646 50  0000 L CNN
+F 1 "Fiducial" H 1535 1555 50  0000 L CNN
+F 2 "Fiducial:Fiducial_0.5mm_Mask1mm" H 1450 1600 50  0001 C CNN
+F 3 "~" H 1450 1600 50  0001 C CNN
+	1    1450 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:Fiducial FID2
+U 1 1 5FB46128
+P 1450 1800
+F 0 "FID2" H 1535 1846 50  0000 L CNN
+F 1 "Fiducial" H 1535 1755 50  0000 L CNN
+F 2 "Fiducial:Fiducial_0.5mm_Mask1mm" H 1450 1800 50  0001 C CNN
+F 3 "~" H 1450 1800 50  0001 C CNN
+	1    1450 1800
+	1    0    0    -1  
+$EndComp
+NoConn ~ 1600 5050
+$Comp
+L Connector:USB_C_Plug_USB2.0 P1
+U 1 1 62FED1CB
+P 1000 5350
+F 0 "P1" H 1107 6217 50  0000 C CNN
+F 1 "USB_C_Plug_USB2.0" H 1107 6126 50  0000 C CNN
+F 2 "corelib:UTC009-C-vias-optimized" H 1150 5350 50  0001 C CNN
+F 3 "https://www.usb.org/sites/default/files/documents/usb_type-c.zip" H 1150 5350 50  0001 C CNN
+	1    1000 5350
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
-	1300 7350 1600 7350
-Connection ~ 1600 7350
+	1000 6250 700  6250
+Connection ~ 1000 6250
 $Comp
-L Mechanical:Fiducial FI1
-U 1 1 6056FD14
-P 5400 5650
-F 0 "FI1" H 5485 5696 50  0000 L CNN
-F 1 "Fiducial" H 5485 5605 50  0000 L CNN
-F 2 "Fiducial:Fiducial_0.5mm_Mask1mm" H 5400 5650 50  0001 C CNN
-F 3 "~" H 5400 5650 50  0001 C CNN
-	1    5400 5650
-	1    0    0    -1  
+L Device:R R?
+U 1 1 6301479B
+P 1950 4950
+AR Path="/5DDFB633/6301479B" Ref="R?"  Part="1" 
+AR Path="/6301479B" Ref="R5"  Part="1" 
+F 0 "R5" H 2020 4996 50  0000 L CNN
+F 1 "5.1k" V 1950 4850 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 1880 4950 50  0001 C CNN
+F 3 "~" H 1950 4950 50  0001 C CNN
+F 4 "" H 1950 4950 50  0001 C CNN "Manufacturer"
+F 5 "+/- 1%" H 1950 4950 50  0001 C CNN "Description"
+F 6 "" H 1950 4950 50  0001 C CNN "MPN"
+F 7 "2" H 1950 4950 50  0001 C CNN "Pins"
+F 8 "0402" H 1950 4950 50  0001 C CNN "Package"
+	1    1950 4950
+	0    -1   -1   0   
 $EndComp
-$Comp
-L Mechanical:Fiducial FI2
-U 1 1 605702C8
-P 5400 5850
-F 0 "FI2" H 5485 5896 50  0000 L CNN
-F 1 "Fiducial" H 5485 5805 50  0000 L CNN
-F 2 "Fiducial:Fiducial_0.5mm_Mask1mm" H 5400 5850 50  0001 C CNN
-F 3 "~" H 5400 5850 50  0001 C CNN
-	1    5400 5850
-	1    0    0    -1  
-$EndComp
+Text Label 2100 4950 0    50   ~ 0
+GND
+Wire Wire Line
+	1600 4950 1800 4950
+Wire Wire Line
+	1800 4950 1800 5100
+Wire Wire Line
+	1800 5100 2700 5100
+Wire Wire Line
+	2700 5100 2700 5450
+Wire Wire Line
+	2700 5450 3000 5450
+Connection ~ 1800 4950
 $EndSCHEMATC
